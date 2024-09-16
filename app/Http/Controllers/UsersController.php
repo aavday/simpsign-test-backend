@@ -10,6 +10,6 @@ class UsersController extends Controller
 {
     public function index(): Collection
     {
-        return User::all();
+        return User::all('name', 'description', 'email');
     }
 }
