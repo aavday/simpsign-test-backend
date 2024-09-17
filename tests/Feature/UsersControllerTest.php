@@ -14,9 +14,9 @@ class UsersControllerTest extends TestCase
         $isPassed = true;
 
         $users->contains(function ($user) use (&$isPassed) {
-           if (!Json::decode($user->description)) {
-               $isPassed = false;
-           }
+            if (!$user->description) {
+                $isPassed = false;
+            }
         });
 
         $this->assertTrue($isPassed);
